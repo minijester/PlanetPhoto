@@ -1,5 +1,6 @@
 object Versions {
     const val KOTLIN_VERSION = "1.6.10"
+    const val COROUTINE_VERSION = "1.6.1"
     const val GRADLE_VERSION = "7.0.4"
     const val ANDROID_APPCOMPAT_VERSION = "1.4.0"
     const val ANDROID_MATERIAL_VERSION = "1.6.0"
@@ -18,6 +19,7 @@ object Versions {
     const val ROBOLECTRIC_VERSION = "4.7.3"
     const val RETROFIT_VERSION = "2.9.0"
     const val LOGGING_INTERCEPTOR = "4.9.0"
+    const val ROOM_VERSION = "2.4.2"
     const val COROUTINE = "1.6.1"
     const val GSON = "2.9.0"
     const val GLIDE_VERSION = "4.13.0"

@@ -1,7 +1,6 @@
-package com.miharu.planetphoto.di
+package com.miharu.planetphoto.core.di
 
 import com.miharu.planetphoto.data.DataModule
-import com.miharu.planetphoto.presenter.viewmodel.ViewModelModule
 import dagger.Component
 
 @Component(

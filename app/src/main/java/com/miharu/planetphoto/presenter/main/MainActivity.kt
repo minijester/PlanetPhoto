@@ -1,4 +1,4 @@
-package com.miharu.planetphoto.presenter
+package com.miharu.planetphoto.presenter.main
 
 import android.os.Bundle
 import android.view.Menu

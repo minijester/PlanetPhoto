@@ -1,4 +1,4 @@
-package com.miharu.planetphoto.di
+package com.miharu.planetphoto.core.di
 
 import com.miharu.planetphoto.data.repository.MainRepositoryImpl
 import com.miharu.planetphoto.domain.repository.MainRepository

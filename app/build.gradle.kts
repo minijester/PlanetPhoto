@@ -41,19 +41,39 @@ android {
 
 dependencies {
     implementation(Dependencies.KOTLIN)
+    implementation(Dependencies.COROUTINE)
+    // Android X
     implementation(Dependencies.ANDROIDX_CORE_KTX)
     implementation(Dependencies.ANDROIDX_APP_COMPAT)
     implementation(Dependencies.ANDROIDX_MATERIAL)
     implementation(Dependencies.ANDROIDX_CONSTRAINT_LAYOUT)
     implementation(Dependencies.ANDROIDX_NAVIGATION_FRAGMENT_KTX)
     implementation(Dependencies.ANDROIDX_NAVIGATION_UI_KTX)
+    implementation(Dependencies.SPLASH_SCREEN)
+    implementation(Dependencies.ROOM)
+    implementation(Dependencies.PAGING)
+    implementation(Dependencies.ANDROIDX_LIFE_CYCLE)
+    implementation(Dependencies.ANDROIDX_VIEW_MODEL)
+    implementation(Dependencies.ANDROIDX_LIVE_DATA)
+    // Hilt
     implementation(Dependencies.HILT_ANDROID)
     implementation(Dependencies.HILT_VIEW_MODEL)
     implementation(Dependencies.HILT_COMMON)
-    implementation(Dependencies.SPLASH_SCREEN)
+    //Retrofit
+    implementation(Dependencies.RETROFIT)
+    implementation(Dependencies.GSON)
+    implementation(Dependencies.RETROFIT_GSON_CONVERTER)
+    implementation(Dependencies.LOGGING_INTERCEPTOR)
+    //Room
+    implementation(Dependencies.ROOM)
+    //Glide
+    implementation(Dependencies.GLIDE)
+
+    annotationProcessor(Dependencies.ROOM_COMPILER)
 
     kapt(Dependencies.HILT_ANDROID_COMPILER)
     kapt(Dependencies.HILT_COMPILER)
+    kapt(Dependencies.ROOM_COMPILER)
 
     testImplementation(Dependencies.Test.JUNIT)
     testImplementation(Dependencies.Test.BYTE_BUDDY_ANDROID)

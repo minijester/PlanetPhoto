@@ -1,4 +1,4 @@
-package com.miharu.planetphoto.presenter.viewmodel
+package com.miharu.planetphoto.core.di
 
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.FragmentComponent

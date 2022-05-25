@@ -1,5 +1,7 @@
 object Dependencies {
+    // KOTLIN
     const val KOTLIN = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_VERSION}"
+    const val COROUTINE = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINE_VERSION}"
 
     // Android X
     const val ANDROIDX_APP_COMPAT =
@@ -32,18 +34,16 @@ object Dependencies {
 
     //retrofit
     const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
-    const val RETROFIT_MOSHI_CONVERNTER =
-        "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT_VERSION}"
+    const val RETROFIT_GSON_CONVERTER = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT_VERSION}"
     const val LOGGING_INTERCEPTOR =
         "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}"
 
+    //room
+    const val ROOM = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
+    const val ROOM_COMPILER = "androidx.room:room-compiler${Versions.ROOM_VERSION}"
+
     //gson
     const val GSON = "com.google.code.gson:gson:${Versions.GSON}"
-
-    //Coroutine
-    const val COROUTINE_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE}"
-    const val COROUTINE_ANDROID =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINE}"
 
     //Glide
     const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE_VERSION}"
