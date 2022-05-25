@@ -1,7 +1,7 @@
 object Versions {
     const val KOTLIN_VERSION = "1.6.10"
     const val GRADLE_VERSION = "7.0.4"
-    const val ANDROID_APPCOMPAT_VERSION = "1.4.1"
+    const val ANDROID_APPCOMPAT_VERSION = "1.4.0"
     const val ANDROID_MATERIAL_VERSION = "1.6.0"
     const val ANDROID_CORE_KTX_VERSION = "1.7.0"
     const val ANDROID_LIFECYCLE_VERSION = "2.4.1"

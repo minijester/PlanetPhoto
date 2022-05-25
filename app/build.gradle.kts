@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.ANDROIDX_CORE_KTX)
     implementation(Dependencies.ANDROIDX_APP_COMPAT)
     implementation(Dependencies.ANDROIDX_MATERIAL)
@@ -49,7 +50,6 @@ dependencies {
     implementation(Dependencies.HILT_ANDROID)
     implementation(Dependencies.HILT_VIEW_MODEL)
     implementation(Dependencies.HILT_COMMON)
-    implementation(Dependencies.KOTLIN)
     implementation(Dependencies.SPLASH_SCREEN)
 
     kapt(Dependencies.HILT_ANDROID_COMPILER)
