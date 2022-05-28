@@ -1,4 +1,4 @@
-package com.miharu.planetphoto.presenter.base
+package com.miharu.planetphoto.core.base
 
 import androidx.appcompat.app.AppCompatActivity
 

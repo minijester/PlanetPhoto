@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.snackbar.Snackbar
 import com.miharu.planetphoto.R
 import com.miharu.planetphoto.databinding.ActivityMainBinding
-import com.miharu.planetphoto.presenter.base.BaseActivity
+import com.miharu.planetphoto.core.base.BaseActivity
 
 class MainActivity : BaseActivity() {
 
