@@ -10,6 +10,7 @@ object Versions {
     const val ANDROID_CONSTRAINTLAYOUT_VERSION = "2.1.3"
     const val ANDROID_HILT_VERSION = "2.38.1"
     const val ANDROIDX_HILT_VERSION = "1.0.0"
+    const val ANDROIDX_HILT_VIEWMODEL_VERSION = "1.0.0-alpha03"
     const val JUNIT_VERSION = "4.13"
     const val ANDROID_JUNIT_VERSION = "1.1.1"
     const val ANDROID_ESPRESSO_VERSION = "3.2.0"

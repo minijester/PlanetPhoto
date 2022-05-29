@@ -1,5 +1,6 @@
 package com.miharu.planetphoto.data.repository
 
+import com.miharu.planetphoto.core.di.IoDispatcher
 import com.miharu.planetphoto.data.datasource.local.MainAppDao
 import com.miharu.planetphoto.data.datasource.remote.MainCloudDataSource
 import com.miharu.planetphoto.domain.model.ApodResponse
@@ -9,7 +10,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class MainRepositoryImpl @Inject constructor(
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+    @IoDispatcher private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val mainCloudDataSource: MainCloudDataSource,
     private val mainAppDao: MainAppDao
 ) : MainRepository {

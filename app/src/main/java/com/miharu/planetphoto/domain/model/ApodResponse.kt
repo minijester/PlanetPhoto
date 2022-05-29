@@ -9,6 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName = "apod_table")
 data class ApodResponse(
     @PrimaryKey(autoGenerate = true)
+    var id : Int? = null,
     val title: String,
     val explanation: String,
     val date: String,

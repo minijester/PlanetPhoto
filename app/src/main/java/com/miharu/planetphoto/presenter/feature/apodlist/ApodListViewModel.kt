@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.miharu.planetphoto.core.base.BaseViewModel
 import com.miharu.planetphoto.domain.model.ApodResponse
 import com.miharu.planetphoto.domain.usecase.GetApodListUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class ApodListViewModel @Inject constructor(
     private val getApodListUseCase: GetApodListUseCase
 ) : BaseViewModel() {
@@ -20,7 +22,7 @@ class ApodListViewModel @Inject constructor(
         getApodList()
     }
 
-    fun getApodList(startDate: String = "55", endDate: String = "55") {
+    fun getApodList(startDate: String = "2022-04-29", endDate: String = "2022-05-29") {
         viewModelScope.launch {
             val fetchApodList = getApodListUseCase.invoke(
                 GetApodListUseCase.Params(

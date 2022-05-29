@@ -10,7 +10,7 @@ interface MainAppDao {
 
     @Query("SELECT * FROM apod_table LIMIT :count")
     fun getApodList(
-        startDate: String, endDate: String, count: Int = APOD_COUNT,
+        count: Int = APOD_COUNT,
     ): List<ApodResponse>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

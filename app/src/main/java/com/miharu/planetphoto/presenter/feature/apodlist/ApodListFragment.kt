@@ -10,9 +10,11 @@ import com.miharu.planetphoto.core.base.BaseFragment
 import com.miharu.planetphoto.core.extension.clickAsFlow
 import com.miharu.planetphoto.core.extension.viewBinding
 import com.miharu.planetphoto.databinding.FragmentApodListBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
+@AndroidEntryPoint
 class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
 
     private val binding by viewBinding(FragmentApodListBinding::bind)

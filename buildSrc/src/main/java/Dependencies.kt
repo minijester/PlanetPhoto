@@ -26,7 +26,7 @@ object Dependencies {
     //hilt
     const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.ANDROID_HILT_VERSION}"
     const val HILT_VIEW_MODEL =
-        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.ANDROIDX_HILT_VERSION}"
+        "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.ANDROIDX_HILT_VIEWMODEL_VERSION}"
     const val HILT_COMMON = "androidx.hilt:hilt-common:${Versions.ANDROIDX_HILT_VERSION}"
     const val HILT_ANDROID_COMPILER =
         "com.google.dagger:hilt-compiler:${Versions.ANDROID_HILT_VERSION}"
@@ -40,7 +40,7 @@ object Dependencies {
 
     //room
     const val ROOM = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
-    const val ROOM_COMPILER = "androidx.room:room-compiler${Versions.ROOM_VERSION}"
+    const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
 
     //gson
     const val GSON = "com.google.code.gson:gson:${Versions.GSON}"
