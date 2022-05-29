@@ -16,5 +16,5 @@ interface MainCloudDataSource {
         @Query("end_date") endDate: String,
         @Query("count") count: Int = APOD_COUNT,
         @Query("api_key") apiKey: String = API_KEY,
-    ): Response<List<ApodResponse>>
+    ): List<ApodResponse>
 }

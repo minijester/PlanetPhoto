@@ -1,5 +1,6 @@
 package com.miharu.planetphoto.presenter.feature.apodlist
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.miharu.planetphoto.databinding.ItemApodListBinding
 import com.miharu.planetphoto.domain.model.ApodResponse
 
 class ApodListAdapter(
-    private val apodList: List<ApodResponse> = listOf()
+    private val apodList: MutableList<ApodResponse> = mutableListOf()
 ) : RecyclerView.Adapter<ApodListAdapter.ApodListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ApodListViewHolder {
@@ -24,6 +25,13 @@ class ApodListAdapter(
     }
 
     override fun getItemCount(): Int = apodList.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateList(fetchApodList: List<ApodResponse>) {
+        apodList.clear()
+        apodList.addAll(fetchApodList)
+        notifyDataSetChanged()
+    }
 
     inner class ApodListViewHolder(private val binding: ItemApodListBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -6,16 +6,15 @@ import com.miharu.planetphoto.domain.model.ApodResponse
 import javax.inject.Inject
 
 class GetApodListUseCase @Inject constructor(
-    private val mainRepository: MainRepository
+    private val mainRepository: MainRepository,
 ) : BaseUseCaseWithParams<GetApodListUseCase.Params, List<ApodResponse>> {
 
-    override suspend fun run(params: Params): List<ApodResponse> {
-        return mainRepository.getApodList()
+    override suspend fun invoke(params: Params): List<ApodResponse> {
+        return mainRepository.getApodList(params.startDate, params.endDate)
     }
 
     data class Params(
         val startDate: String,
         val endDate: String,
     )
-
 }
