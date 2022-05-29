@@ -1,18 +1,13 @@
 package com.miharu.planetphoto.presenter.feature.apodlist
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.miharu.planetphoto.core.base.BaseViewModel
-import com.miharu.planetphoto.core.extension.formatDefaultPattern
 import com.miharu.planetphoto.domain.model.ApodResponse
 import com.miharu.planetphoto.domain.usecase.GetApodListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import org.threeten.bp.LocalDate
-import org.threeten.bp.format.DateTimeFormatter
 import javax.inject.Inject
 
 @HiltViewModel
