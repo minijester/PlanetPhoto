@@ -14,7 +14,7 @@ class GetApodListUseCase @Inject constructor(
     }
 
     data class Params(
-        val startDate: String,
-        val endDate: String,
+        val startDate: String?,
+        val endDate: String?,
     )
 }

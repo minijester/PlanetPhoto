@@ -41,6 +41,7 @@ object Dependencies {
     //room
     const val ROOM = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
     const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
+    const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
 
     //gson
     const val GSON = "com.google.code.gson:gson:${Versions.GSON}"

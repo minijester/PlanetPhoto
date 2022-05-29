@@ -11,8 +11,8 @@ interface MainAppDao {
     fun getApodList(): List<ApodResponse>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertApodList(apodList: List<ApodResponse>)
+    suspend fun insertApodList(apodList: List<ApodResponse>)
 
     @Query("DELETE from apod_table")
-    fun deleteApodList()
+    suspend fun deleteApodList()
 }

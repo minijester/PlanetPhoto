@@ -66,6 +66,7 @@ dependencies {
     implementation(Dependencies.LOGGING_INTERCEPTOR)
     //Room
     implementation(Dependencies.ROOM)
+    implementation(Dependencies.ROOM_KTX)
     //Glide
     implementation(Dependencies.GLIDE)
     //Threeten
