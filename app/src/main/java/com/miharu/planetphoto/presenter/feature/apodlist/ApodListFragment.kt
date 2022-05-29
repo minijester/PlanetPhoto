@@ -58,18 +58,25 @@ class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
     }
 
     private fun showLoading() {
-        Snackbar.make(binding.apodRecyclerview, "Loading", Snackbar.LENGTH_SHORT).show()
-        binding.apodRecyclerview.visibility = View.GONE
+        binding.apply {
+            apodRecyclerview.visibility = View.GONE
+            loadingProgressbar.show()
+        }
     }
 
     private fun showEmptyList() {
-        Snackbar.make(binding.apodRecyclerview, "Empty", Snackbar.LENGTH_SHORT).show()
-        binding.apodRecyclerview.visibility = View.GONE
+        binding.apply {
+            apodRecyclerview.visibility = View.GONE
+            loadingProgressbar.hide()
+        }
     }
 
     private fun updateData(apodList: List<ApodResponse>) {
         apodListAdapter.updateList(apodList)
-        binding.apodRecyclerview.visibility = View.VISIBLE
+        binding.apply {
+            apodRecyclerview.visibility = View.VISIBLE
+            loadingProgressbar.hide()
+        }
     }
 
 
