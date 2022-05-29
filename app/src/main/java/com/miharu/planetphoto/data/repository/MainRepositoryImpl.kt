@@ -18,19 +18,20 @@ class MainRepositoryImpl @Inject constructor(
     override suspend fun getApodList(startDate: String, endDate: String): List<ApodResponse> {
         val apodList = mutableListOf<ApodResponse>()
         withContext(ioDispatcher) {
-            val response = mainCloudDataSource.getApodList(startDate, endDate)
-            if (response.isNotEmpty()) insertApodList(response)
-            apodList.addAll(response)
+            val response = mainCloudDataSource.getApodList(startDate = startDate, endDate = endDate)
+            if (response.isSuccessful) {
+                val responseList = response.body() ?: listOf()
+                if (responseList.isNotEmpty()) insertApodList(responseList)
+                apodList.addAll(responseList)
+            }
         }
         return apodList
     }
 
     override suspend fun insertApodList(apodList: List<ApodResponse>) {
         if (apodList.isNotEmpty()) {
-            withContext(ioDispatcher){
-                deleteApodList()
-                mainAppDao.insertApodList(apodList)
-            }
+            deleteApodList()
+            mainAppDao.insertApodList(apodList)
         }
     }
 

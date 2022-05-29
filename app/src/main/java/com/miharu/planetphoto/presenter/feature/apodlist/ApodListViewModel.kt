@@ -22,7 +22,7 @@ class ApodListViewModel @Inject constructor(
         getApodList()
     }
 
-    fun getApodList(startDate: String = "2022-04-29", endDate: String = "2022-05-29") {
+    fun getApodList(startDate: String = "2022-04-08", endDate: String = "2022-05-10") {
         viewModelScope.launch {
             val fetchApodList = getApodListUseCase.invoke(
                 GetApodListUseCase.Params(
