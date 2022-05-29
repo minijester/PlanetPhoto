@@ -51,6 +51,9 @@ object Dependencies {
     // Paging
     const val PAGING = "androidx.paging:paging-runtime:${Versions.PAGING_VERSION}"
 
+    // Date Java8 Backport
+    const val THREETENABP = "com.jakewharton.threetenabp:threetenabp:${Versions.THREETENABP_VERSION}"
+
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT_VERSION}"
         const val ANDROIDX_JUNIT = "androidx.test.ext:junit:${Versions.ANDROID_JUNIT_VERSION}"

@@ -30,4 +30,5 @@ object Versions {
     const val COROUTINE_TEST_VERSION = "1.6.1"
     const val CORE_TESTING_VERSION = "2.1.0"
     const val ANDROIDX_TEST_VERSION = "1.4.0"
+    const val THREETENABP_VERSION = "1.4.0"
 }

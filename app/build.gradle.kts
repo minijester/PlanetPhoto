@@ -68,6 +68,8 @@ dependencies {
     implementation(Dependencies.ROOM)
     //Glide
     implementation(Dependencies.GLIDE)
+    //Threeten
+    implementation(Dependencies.THREETENABP)
 
     annotationProcessor(Dependencies.ROOM_COMPILER)
 
