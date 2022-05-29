@@ -8,6 +8,8 @@ import com.miharu.planetphoto.core.extension.formatDefaultPattern
 import com.miharu.planetphoto.domain.model.ApodResponse
 import com.miharu.planetphoto.domain.usecase.GetApodListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import org.threeten.bp.LocalDate
 import org.threeten.bp.format.DateTimeFormatter
@@ -18,8 +20,8 @@ class ApodListViewModel @Inject constructor(
     private val getApodListUseCase: GetApodListUseCase
 ) : BaseViewModel() {
 
-    private val _apodList: MutableLiveData<List<ApodResponse>> = MutableLiveData()
-    val apodList: LiveData<List<ApodResponse>> = _apodList
+    private val _apodListUiState = MutableStateFlow<ApodListUiState>(ApodListUiState.Empty)
+    val apodListUiState: StateFlow<ApodListUiState> get() = _apodListUiState
 
     init {
         getApodList()
@@ -30,14 +32,22 @@ class ApodListViewModel @Inject constructor(
         endDate: String? = null
     ) {
         viewModelScope.launch {
+            _apodListUiState.value = ApodListUiState.Loading
             val fetchApodList = getApodListUseCase.invoke(
                 GetApodListUseCase.Params(
                     startDate = startDate,
                     endDate = endDate
                 )
             )
-            _apodList.value = fetchApodList
+            if (fetchApodList.isNotEmpty()) _apodListUiState.value =
+                ApodListUiState.Success(fetchApodList)
+            else _apodListUiState.value = ApodListUiState.Empty
         }
     }
+}
 
+sealed class ApodListUiState {
+    data class Success(val apodList: List<ApodResponse>) : ApodListUiState()
+    object Loading : ApodListUiState()
+    object Empty : ApodListUiState()
 }

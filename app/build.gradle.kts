@@ -55,6 +55,7 @@ dependencies {
     implementation(Dependencies.ANDROIDX_LIFE_CYCLE)
     implementation(Dependencies.ANDROIDX_VIEW_MODEL)
     implementation(Dependencies.ANDROIDX_LIVE_DATA)
+    implementation(Dependencies.ANDROIDX_LIFE_CYCLE_RUNTIME)
     // Hilt
     implementation(Dependencies.HILT_ANDROID)
     implementation(Dependencies.HILT_VIEW_MODEL)

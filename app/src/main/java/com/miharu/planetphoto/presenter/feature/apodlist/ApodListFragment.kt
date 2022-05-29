@@ -4,18 +4,23 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.util.Pair
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.snackbar.Snackbar
 import com.miharu.planetphoto.R
 import com.miharu.planetphoto.core.base.BaseFragment
 import com.miharu.planetphoto.core.extension.*
 import com.miharu.planetphoto.core.util.RangeValidator
 import com.miharu.planetphoto.databinding.FragmentApodListBinding
+import com.miharu.planetphoto.domain.model.ApodResponse
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import org.threeten.bp.LocalDate
 
 @AndroidEntryPoint
@@ -24,7 +29,6 @@ class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
     private val binding by viewBinding(FragmentApodListBinding::bind)
     private val apodListViewModel: ApodListViewModel by viewModels()
     private val apodListAdapter by lazy { ApodListAdapter() }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,10 +44,34 @@ class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
                 }.launchIn(lifecycleScope)
         }
 
-        apodListViewModel.apodList.observe(viewLifecycleOwner) {
-            apodListAdapter.updateList(it)
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                apodListViewModel.apodListUiState.collect { uiState ->
+                    when (uiState) {
+                        is ApodListUiState.Loading -> showLoading()
+                        is ApodListUiState.Empty -> showEmptyList()
+                        is ApodListUiState.Success -> updateData(uiState.apodList)
+                    }
+                }
+            }
         }
     }
+
+    private fun showLoading() {
+        Snackbar.make(binding.apodRecyclerview, "Loading", Snackbar.LENGTH_SHORT).show()
+        binding.apodRecyclerview.visibility = View.GONE
+    }
+
+    private fun showEmptyList() {
+        Snackbar.make(binding.apodRecyclerview, "Empty", Snackbar.LENGTH_SHORT).show()
+        binding.apodRecyclerview.visibility = View.GONE
+    }
+
+    private fun updateData(apodList: List<ApodResponse>) {
+        apodListAdapter.updateList(apodList)
+        binding.apodRecyclerview.visibility = View.VISIBLE
+    }
+
 
     private fun showDatePicker() {
         val minStartDate = LocalDate.parse("1995-06-16").toEpochMills()

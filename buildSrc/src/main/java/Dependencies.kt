@@ -12,6 +12,7 @@ object Dependencies {
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.ANDROID_LIFECYCLE_VERSION}"
     const val ANDROIDX_LIFE_CYCLE =
         "androidx.lifecycle:lifecycle-common-java8:${Versions.ANDROID_LIFECYCLE_VERSION}"
+    const val ANDROIDX_LIFE_CYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.ANDROID_LIFECYCLE_VERSION}"
     const val ANDROIDX_CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${Versions.ANDROID_CONSTRAINTLAYOUT_VERSION}"
     const val ANDROIDX_CORE_KTX = "androidx.core:core-ktx:${Versions.ANDROID_CORE_KTX_VERSION}"
