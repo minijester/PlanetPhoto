@@ -5,5 +5,5 @@ interface BaseUseCaseWithParams<P, R> {
 }
 
 interface BaseUseCaseNoParams<R> {
-    suspend fun run(): R
+    suspend fun invoke(): R
 }

@@ -2,6 +2,7 @@ package com.miharu.planetphoto.presenter.feature.apodlist
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -44,8 +45,13 @@ class ApodListAdapter(
                     .into(apodImageView)
                 apodTitleTextView.text = root.context.getString(R.string.apod_title, apod.title)
                 apodDateTextView.text = root.context.getString(R.string.apod_date, apod.date)
-                apodCopyRightTextView.text =
-                    root.context.getString(R.string.apod_copyright, apod.copyright)
+                if (apod.copyright != null) {
+                    apodCopyRightTextView.visibility = View.VISIBLE
+                    apodCopyRightTextView.text =
+                        root.context.getString(R.string.apod_copyright, apod.copyright)
+                } else {
+                    apodCopyRightTextView.visibility = View.GONE
+                }
                 apodExplanationTextView.text =
                     root.context.getString(R.string.apod_explanation, apod.explanation)
             }

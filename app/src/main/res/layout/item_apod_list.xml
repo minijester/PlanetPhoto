@@ -13,6 +13,7 @@
         android:layout_marginStart="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
         tools:srcCompat="@android:drawable/ic_lock_idle_lock" />
 
     <TextView
