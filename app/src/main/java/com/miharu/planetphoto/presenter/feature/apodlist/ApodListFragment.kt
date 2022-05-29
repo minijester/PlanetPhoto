@@ -74,7 +74,7 @@ class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
 
 
     private fun showDatePicker() {
-        val minStartDate = LocalDate.parse("1995-06-16").toEpochMills()
+        val minStartDate = LocalDate.parse(MIN_START_DATE).toEpochMills()
         val maxEndDate = LocalDate.now().toEpochMills()
 
         val dateCalendar = CalendarConstraints
@@ -103,5 +103,9 @@ class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
         val selectedStartDate = range.first.toLocalDate().formatDefaultPattern()
         val selectedEndDate = range.second.toLocalDate().formatDefaultPattern()
         apodListViewModel.getApodList(selectedStartDate, selectedEndDate)
+    }
+
+    companion object {
+        const val MIN_START_DATE = "1995-06-16"
     }
 }
