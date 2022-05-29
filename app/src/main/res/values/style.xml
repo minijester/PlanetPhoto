@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    data picker -->
+    <style name="Widget.AppTheme.MaterialDatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarHeaderTitle">
+            @style/Widget.AppTheme.MaterialDatePicker.HeaderTitle
+        </item>
+        <item name="materialCalendarHeaderToggleButton">
+            @style/Widget.AppTheme.MaterialDatePicker.HeaderToggleButton
+        </item>
+        <item name="materialCalendarHeaderSelection">
+            @style/Widget.AppTheme.MaterialDatePicker.HeaderSelection
+        </item>
+    </style>
+
+    <style name="Widget.AppTheme.MaterialDatePicker.HeaderTitle" parent="Widget.MaterialComponents.MaterialCalendar.HeaderTitle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Widget.AppTheme.MaterialDatePicker.HeaderToggleButton" parent="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Widget.AppTheme.MaterialDatePicker.HeaderSelection" parent="Widget.MaterialComponents.MaterialCalendar.HeaderSelection">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
