@@ -1,5 +1,6 @@
 package com.miharu.planetphoto.presenter.feature.apodlist
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.core.util.Pair
@@ -29,6 +30,7 @@ class ApodListFragment : BaseFragment(R.layout.fragment_apod_list) {
     private val apodListViewModel: ApodListViewModel by viewModels()
     private val apodListAdapter by lazy { ApodListAdapter() }
 
+    @SuppressLint("UnsafeRepeatOnLifecycleDetector")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {

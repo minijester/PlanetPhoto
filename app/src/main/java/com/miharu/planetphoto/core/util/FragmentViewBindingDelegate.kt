@@ -18,13 +18,13 @@ class FragmentViewBindingDelegate<T : ViewBinding>(
     init {
         fragment.lifecycle.addObserver(object : DefaultLifecycleObserver {
             override fun onCreate(owner: LifecycleOwner) {
-                fragment.viewLifecycleOwnerLiveData.observe(fragment, {
+                fragment.viewLifecycleOwnerLiveData.observe(fragment) {
                     it.lifecycle.addObserver(object : DefaultLifecycleObserver {
                         override fun onDestroy(owner: LifecycleOwner) {
                             binding = null
                         }
                     })
-                })
+                }
             }
         })
     }
